@@ -70,8 +70,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 16,
         justifyContent: 'center',
-        backgroundColor: '#333',
-        paddingTop: Constants.statusBarHeight
+        backgroundColor: '#333'
     },
     label: {
         color: '#fff',

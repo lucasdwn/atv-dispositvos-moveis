@@ -66,8 +66,7 @@ const styles = StyleSheet.create({
         padding: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f3f3f3',
-        paddingTop: Constants.statusBarHeight
+        backgroundColor: '#f3f3f3'
     },
     button: {
         flex: 0.5,
