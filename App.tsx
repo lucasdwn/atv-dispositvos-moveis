@@ -8,10 +8,9 @@ import Sete from './screens/Sete';
 import Oito from './screens/Oito';
 import Nove from './screens/Nove';
 import Dez from './screens/Dez';
-import Onze from './screens/Onze';
+import Ionicons from "react-native-vector-icons/Ionicons";
 import { NavigationContainer } from '@react-navigation/native';
 import { RootStackParamList } from './types';
-import Home from './screens/Home';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 const Drawer = createDrawerNavigator<RootStackParamList>();
 
@@ -20,6 +19,46 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator
         initialRouteName='Um'
+        screenOptions={({ route }) => ({
+          drawerIcon: ({ color, size }) => {
+            let iconName: string;
+            switch (route.name) {
+              case "Um":
+                iconName = "globe-outline";
+                break;
+              case "Dois":
+                iconName = "attach-outline";
+                break;
+              case "Tres":
+                iconName = "car-outline";
+                break;
+              case "Quatro":
+                iconName = "checkmark-circle-outline";
+                break;
+              case "Cinco":
+                iconName = "image-outline";
+                break;
+              case "Seis":
+                iconName = "laptop-outline";
+                break;
+              case "Sete":
+                iconName = "man-outline";
+                break;
+              case "Oito":
+                iconName = "phone-portrait-outline";
+                break;
+              case "Nove":
+                iconName = "save-outline";
+                break;
+              case "Dez":
+                iconName = "moon-outline";
+                break;
+              default:
+                iconName = "alert-circle-outline";
+            }
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
       >
         {/* <Drawer.Screen
           name="Home" component={Home}
