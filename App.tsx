@@ -12,6 +12,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { NavigationContainer } from '@react-navigation/native';
 import { RootStackParamList } from './types';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import ViaCep from './screens/ViaCep/Index';
 const Drawer = createDrawerNavigator<RootStackParamList>();
 
 export default function App() {
@@ -53,6 +54,8 @@ export default function App() {
               case "Dez":
                 iconName = "moon-outline";
                 break;
+              case "ViaCep":
+                iconName = "pin-outline"
               default:
                 iconName = "alert-circle-outline";
             }
@@ -63,7 +66,7 @@ export default function App() {
         {/* <Drawer.Screen
           name="Home" component={Home}
           options={{ title: 'Início' }} /> */}
-        <Drawer.Screen
+        {/* <Drawer.Screen
           name="Um" component={Um}
           options={{ title: 'Exercicio 1' }} />
         <Drawer.Screen
@@ -92,7 +95,10 @@ export default function App() {
           options={{ title: 'Exercicio 9' }} />
         <Drawer.Screen
           name="Dez" component={Dez}
-          options={{ title: 'Exercicio 10' }} />
+          options={{ title: 'Exercicio 10' }} /> */}
+          <Drawer.Screen
+          name="ViaCep" component={ViaCep}
+          options={{ title: 'ViaCEP' }} />
       </Drawer.Navigator>
     </NavigationContainer>
   )
