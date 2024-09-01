@@ -15,6 +15,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import ViaCep from './screens/ViaCep/Index';
 import { CepProvider } from './contexts/CepContext';
 import ListCeps from './screens/ListCeps';
+import Home from './screens/Home';
 const Drawer = createDrawerNavigator<RootStackParamList>();
 
 export default function App() {
@@ -23,7 +24,7 @@ export default function App() {
 
       <NavigationContainer>
         <Drawer.Navigator
-          initialRouteName='Um'
+          initialRouteName='Home'
           screenOptions={({ route }) => ({
             drawerIcon: ({ color, size }) => {
               let iconName: string;
@@ -71,39 +72,39 @@ export default function App() {
             },
           })}
         >
-          {/* <Drawer.Screen
-          name="Home" component={Home}
-          options={{ title: 'Início' }} /> */}
-          {/* <Drawer.Screen
-          name="Um" component={Um}
-          options={{ title: 'Exercicio 1' }} />
-        <Drawer.Screen
-          name="Dois" component={Dois}
-          options={{ title: 'Exercicio 2' }} />
-        <Drawer.Screen
-          name="Tres" component={Tres}
-          options={{ title: 'Exercicio 3' }} />
-        <Drawer.Screen
-          name="Quatro" component={Quatro}
-          options={{ title: 'Exercicio 4' }} />
-        <Drawer.Screen
-          name="Cinco" component={Cinco}
-          options={{ title: 'Exercicio 5' }} />
-        <Drawer.Screen
-          name="Seis" component={Seis}
-          options={{ title: 'Exercicio 6' }} />
-        <Drawer.Screen
-          name="Sete" component={Sete}
-          options={{ title: 'Exercicio 7' }} />
-        <Drawer.Screen
-          name="Oito" component={Oito}
-          options={{ title: 'Exercicio 8' }} />
-        <Drawer.Screen
-          name="Nove" component={Nove}
-          options={{ title: 'Exercicio 9' }} />
-        <Drawer.Screen
-          name="Dez" component={Dez}
-          options={{ title: 'Exercicio 10' }} /> */}
+          <Drawer.Screen
+            name="Home" component={Home}
+            options={{ title: 'Exercicio 12' }} />
+          <Drawer.Screen
+            name="Um" component={Um}
+            options={{ title: 'Exercicio 1' }} />
+          <Drawer.Screen
+            name="Dois" component={Dois}
+            options={{ title: 'Exercicio 2' }} />
+          <Drawer.Screen
+            name="Tres" component={Tres}
+            options={{ title: 'Exercicio 3' }} />
+          <Drawer.Screen
+            name="Quatro" component={Quatro}
+            options={{ title: 'Exercicio 4' }} />
+          <Drawer.Screen
+            name="Cinco" component={Cinco}
+            options={{ title: 'Exercicio 5' }} />
+          <Drawer.Screen
+            name="Seis" component={Seis}
+            options={{ title: 'Exercicio 6' }} />
+          <Drawer.Screen
+            name="Sete" component={Sete}
+            options={{ title: 'Exercicio 7' }} />
+          <Drawer.Screen
+            name="Oito" component={Oito}
+            options={{ title: 'Exercicio 8' }} />
+          <Drawer.Screen
+            name="Nove" component={Nove}
+            options={{ title: 'Exercicio 9' }} />
+          <Drawer.Screen
+            name="Dez" component={Dez}
+            options={{ title: 'Exercicio 10' }} />
           <Drawer.Screen
             name="ViaCep" component={ViaCep}
             options={{ title: 'ViaCEP' }} />
