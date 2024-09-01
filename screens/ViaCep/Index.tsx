@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, TextInput, Text, TouchableOpacity } from 'react-native';
-import Endereco from '../../types/Endereco';
-import axios from 'axios';
 import { useCep } from '../../contexts/CepContext';
 
 const ViaCep: React.FC = () => {
@@ -34,17 +32,29 @@ const ViaCep: React.FC = () => {
             </TouchableOpacity>
 
             <View>
-                <Text style={styles.result}>
-                    Logradouro: {endereco?.logradouro}
-                </Text>
-                <Text style={styles.result}>
-                    Localidade: {endereco?.localidade}
-                </Text>
-                <Text style={styles.result}>
-                    UF: {endereco?.uf}
-                </Text>
+                {
+                    endereco ? (
+                        <View>
+                            <Text style={styles.result}>
+                                Logradouro: {endereco?.logradouro}
+                            </Text>
+                            <Text style={styles.result}>
+                                Localidade: {endereco?.localidade}
+                            </Text>
+                            <Text style={styles.result}>
+                                UF: {endereco?.uf}
+                            </Text>
+                        </View>
+                    ) :
+                        (
+                            <View>
+                                <Text style={styles.result}>
+                                    {error}
+                                </Text>
+                            </View>
+                        )
+                }
             </View>
-
         </View>
     );
 };

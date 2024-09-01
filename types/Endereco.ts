@@ -12,4 +12,5 @@ export default interface Endereco {
     gia: string;
     ddd: string;
     siafi: string;
+    erro: string;
 }

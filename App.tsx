@@ -14,6 +14,7 @@ import { RootStackParamList } from './types';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ViaCep from './screens/ViaCep/Index';
 import { CepProvider } from './contexts/CepContext';
+import ListCeps from './screens/ListCeps';
 const Drawer = createDrawerNavigator<RootStackParamList>();
 
 export default function App() {
@@ -58,7 +59,11 @@ export default function App() {
                   iconName = "moon-outline";
                   break;
                 case "ViaCep":
-                  iconName = "pin-outline"
+                  iconName = "locate"
+                  break;
+                case "ListCeps":
+                  iconName = "list"
+                  break;
                 default:
                   iconName = "alert-circle-outline";
               }
@@ -102,6 +107,9 @@ export default function App() {
           <Drawer.Screen
             name="ViaCep" component={ViaCep}
             options={{ title: 'ViaCEP' }} />
+          <Drawer.Screen
+            name="ListCeps" component={ListCeps}
+            options={{ title: 'Consultas de CEP' }} />
         </Drawer.Navigator>
       </NavigationContainer>
     </CepProvider>
