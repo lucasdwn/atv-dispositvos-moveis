@@ -13,60 +13,63 @@ import { NavigationContainer } from '@react-navigation/native';
 import { RootStackParamList } from './types';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ViaCep from './screens/ViaCep/Index';
+import { CepProvider } from './contexts/CepContext';
 const Drawer = createDrawerNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Drawer.Navigator
-        initialRouteName='Um'
-        screenOptions={({ route }) => ({
-          drawerIcon: ({ color, size }) => {
-            let iconName: string;
-            switch (route.name) {
-              case "Um":
-                iconName = "globe-outline";
-                break;
-              case "Dois":
-                iconName = "attach-outline";
-                break;
-              case "Tres":
-                iconName = "car-outline";
-                break;
-              case "Quatro":
-                iconName = "checkmark-circle-outline";
-                break;
-              case "Cinco":
-                iconName = "image-outline";
-                break;
-              case "Seis":
-                iconName = "laptop-outline";
-                break;
-              case "Sete":
-                iconName = "man-outline";
-                break;
-              case "Oito":
-                iconName = "phone-portrait-outline";
-                break;
-              case "Nove":
-                iconName = "save-outline";
-                break;
-              case "Dez":
-                iconName = "moon-outline";
-                break;
-              case "ViaCep":
-                iconName = "pin-outline"
-              default:
-                iconName = "alert-circle-outline";
-            }
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-        })}
-      >
-        {/* <Drawer.Screen
+    <CepProvider>
+
+      <NavigationContainer>
+        <Drawer.Navigator
+          initialRouteName='Um'
+          screenOptions={({ route }) => ({
+            drawerIcon: ({ color, size }) => {
+              let iconName: string;
+              switch (route.name) {
+                case "Um":
+                  iconName = "globe-outline";
+                  break;
+                case "Dois":
+                  iconName = "attach-outline";
+                  break;
+                case "Tres":
+                  iconName = "car-outline";
+                  break;
+                case "Quatro":
+                  iconName = "checkmark-circle-outline";
+                  break;
+                case "Cinco":
+                  iconName = "image-outline";
+                  break;
+                case "Seis":
+                  iconName = "laptop-outline";
+                  break;
+                case "Sete":
+                  iconName = "man-outline";
+                  break;
+                case "Oito":
+                  iconName = "phone-portrait-outline";
+                  break;
+                case "Nove":
+                  iconName = "save-outline";
+                  break;
+                case "Dez":
+                  iconName = "moon-outline";
+                  break;
+                case "ViaCep":
+                  iconName = "pin-outline"
+                default:
+                  iconName = "alert-circle-outline";
+              }
+              return <Ionicons name={iconName} size={size} color={color} />;
+            },
+          })}
+        >
+          {/* <Drawer.Screen
           name="Home" component={Home}
           options={{ title: 'Início' }} /> */}
-        {/* <Drawer.Screen
+          {/* <Drawer.Screen
           name="Um" component={Um}
           options={{ title: 'Exercicio 1' }} />
         <Drawer.Screen
@@ -97,10 +100,11 @@ export default function App() {
           name="Dez" component={Dez}
           options={{ title: 'Exercicio 10' }} /> */}
           <Drawer.Screen
-          name="ViaCep" component={ViaCep}
-          options={{ title: 'ViaCEP' }} />
-      </Drawer.Navigator>
-    </NavigationContainer>
+            name="ViaCep" component={ViaCep}
+            options={{ title: 'ViaCEP' }} />
+        </Drawer.Navigator>
+      </NavigationContainer>
+    </CepProvider>
   )
 }
 
